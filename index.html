@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bingo</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+    </head>
+
+    <body>
+        <main>
+            <h1>Bingo!</h1>
+            <p>Tap a square to mark it!</p>
+            <div class="bingo-board">
+                <div onclick="changeValue(this)" class="bingo-square" data-value="1" data-index="1">1</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="2" data-index="2">2</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="3" data-index="3">3</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="4" data-index="4">4</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="5" data-index="5">5</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="6" data-index="6">6</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="7" data-index="7">7</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="8" data-index="8">8</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="9" data-index="9">9</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="10" data-index="10">10</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="11" data-index="11">11</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="12" data-index="12">12</div>
+                <div onclick="changeValue(this)" class="bingo-square free" data-value="free" data-index="13">Free!</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="14" data-index="14">14</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="15" data-index="15">15</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="16" data-index="16">16</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="17" data-index="17">17</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="18" data-index="18">18</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="19" data-index="19">Lorem.</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="20" data-index="20">Lorem, ipsum.</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="21" data-index="21">Lorem, ipsum dolor.</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="22" data-index="22">22</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="23" data-index="23">23</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="24" data-index="24">24</div>
+                <div onclick="changeValue(this)" class="bingo-square" data-value="25" data-index="25">25</div>
+            </div>
+            <button onclick="genNewBoard()" class="reset-board">New Board</button>
+        </main>
+        <section>
+            <label class="dropdown">
+                Select Board:
+                <select onchange="selectBoard()" class="board-select">
+                    <option value="numbers">Numbers</option>
+                    <option value="finance">Finance</option>
+                    <option value="tech">Tech</option>
+                    <option value="animals">Animals</option>
+                    <option value="food">Food</option>
+                    <option value="sports">Sports</option>
+                    <option value="travel">Travel</option>
+                    <option value="music">Music</option>
+                    <option value="space">Space</option>
+                    <option value="history">History</option>
+                    <option value="argument">Argument</option>
+                    <option value="school">School</option>
+                    <option value="disappointedParents">Disappointed Parents</option>
+                    <option value="groupProject">Group Project</option>
+                    <option value="groupChatDrama">Group Chat Drama</option>
+                </select>
+            </label>
+            <div class="flexbox">
+                <label class="name">
+                    Name:
+                    <input class="name-input" type="text" value="Numbers" maxlength="20" placeholder="Enter name">
+                    <button onclick="saveBoardName()" class="save-name">Save</button>
+                </label>
+                <button onclick="deleteCurrentBoard()" class="delete-board red">Delete Selected Board</button>
+            </div>
+            <div class="flexbox">
+                <button onclick="createNewBoard()" class="new-board">+ Board</button>
+                <button onclick="exportBoard(getCurrentBoard())" class="export-current-board">Export Current Board</button>
+                <button onclick="importNewBoard()" class="import-board">Import Board</button>
+            </div>
+            <textarea class="board-items" placeholder="Minimum Options: 24"></textarea>
+            <button onclick="updateBoardValues()" class="update">Update Board</button>
+        </section>
+
+        <script src="./js/utils.js"></script>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
